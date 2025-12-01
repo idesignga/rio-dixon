@@ -1,0 +1,251 @@
+---
+title: "About | iDesign Site Demo"
+description: "Meta description for the page"
+permalink: "/about/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}"/>
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 482, height: 536 }) | avif %}"/>
+    <link rel="stylesheet" href="/assets/css/about.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    Quote                     -->
+<!-- ============================================ -->
+
+<section id="quote-1889">
+    <div class="cs-container">
+        <div class="cs-item">
+            <p class="cs-review">
+            "We’ll start small then build, laying the foundation and then growing steadily,” says Rio. “Each consultation is exciting, always moving you forward."
+            </p>
+            <div class="cs-flex-group">
+                <picture class="cs-picture">
+                    <img class="cs-profile" src="/assets/images/black-guy-hero.png" decoding="async" alt="profile" width="52" height="52" aria-hidden="true" loading="lazy">
+                </picture>
+                <span class="cs-name">
+                    Jamal Adams
+                    <span class="cs-job">Local Pastor & Community Member</span>
+                </span>
+            </div>
+            <!--Quote Icon-->
+            <img class="cs-quote" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/beige-quote.svg" decoding="async" alt="quote icon" width="92" height="77">
+        </div>
+    </div>
+    <div class="cs-video-wrapper">
+        <!--Compress your video and upload it to a CDN like Digital Oceans Spaces so the video file doesn't cause load time issues. You can also remove the video tag and uncomment the picture tag to use a image instead of a video. Don't forget to remove the cs-play button!-->
+        <!-- <video loading="lazy" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Videos/skincare.mp4" autoplay="false"></video> -->
+        <picture>
+            <img src="/assets/images/kevin.jpg" decoding="async" alt="Rio Dixon" width="100%" height="100%" aria-hidden="true" loading="lazy">
+        </picture>
+        <button class="cs-play" aria-label="click to play video">
+            <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/play-right.svg" alt="play icon" class="cs-icon" width="24" height="24" aria-hidden="true" decoding="async">
+        </button>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                Side By Side                  -->
+<!-- ============================================ -->
+
+<section id="sbs-416">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Who is Rio Dixon?</span>
+            <h2 class="cs-title">The Man With a Plan</h2>
+            <p class="cs-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec nulla lacus. Fusce a magna lacus. Phasellus rhoncus, nisl vitae sodales egestas, lectus arcu luctus metus, nec semper leo odio ut sapien. Ut tincidunt est massa, in scelerisque leo tincidunt in. Donec sit amet quam a ligula commodo hendrerit. Sed ut faucibus erat, et vehicula ligula. Maecenas ipsum purus, tristique id consequat eu, posuere non sem. Vestibulum id ligula rutrum, pretium ligula nec, lacinia ligula. Phasellus ultricies eget sapien vel feugiat. Morbi id urna at augue ullamcorper laoreet sed id est. Aenean neque nulla, bibendum vel augue vel, sollicitudin bibendum odio. Integer est metus, semper id luctus in, aliquet a lacus.
+            </p>
+            <ul class="cs-ul">
+                <li class="cs-item">
+                    <h3 class="cs-h3">Morehouse Team MVP</h3>
+                    <p class="cs-item-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <h3 class="cs-h3">Leadership Award</h3>
+                    <p class="cs-item-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                    </p>
+                </li>
+            </ul>
+            <a href="" class="cs-button-solid">More About Rio
+                <picture class="cs-button-wrapper">
+                    <img class="cs-button-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/angle-arrow.svg" alt="icon" loading="lazy" decoding="async" width="28" height="28">
+                </picture>
+            </a>
+        </div>
+        <div class="cs-image-group">
+            <!--Top Left Image-->
+            <picture class="cs-picture cs-picture1">
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/leaves1-m.jpg">
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/leaves1.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/leaves1.jpg" alt="leaves" width="229" height="352" aria-hidden="true">
+            </picture>
+            <!--Top Right Image-->
+            <picture class="cs-picture cs-picture2">
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/leaves2-m.jpg">
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/leaves2.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/leaves2.jpg" alt="leaves" width="390" height="352" aria-hidden="true">
+            </picture>
+            <!--Bottom Image-->
+            <picture class="cs-picture cs-picture3">
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/leaves3-m.jpg">
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/leaves3.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/leaves3.jpg" alt="leaves" width="649" height="227" aria-hidden="true">
+            </picture>
+            <!--Person Image-->
+            <!--To make your own crop, use https://www.remove.bg to remove the background of your own images-->
+            <picture class="cs-picture cs-person">
+                <source media="(max-width: 600px)" srcset="/assets/images/black-guy-hero.png">
+                <source media="(min-width: 601px)" srcset="/assets/images/black-guy-hero.png">
+                <img loading="lazy" decoding="async" src="/assets/images/black-guy-hero.png" alt="person" width="649" height="227" aria-hidden="true">
+            </picture>
+            <div class="cs-info-box">
+                <span class="cs-job">Speaker • Coach</span>
+                <span class="cs-name">Demario Dixon</span>
+            </div>
+        </div>
+    </div>
+    <!--SVG Background Graphic-->
+    <picture class="cs-graphic">
+        <source media="(min-width: 1300px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/svg-slant.svg">
+        <source media="(min-width: 768px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/svg-slant-t.svg">
+        <source media="(max-width: 767px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/svg-slant-m.svg">
+        <img class="cs-graphic-img" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/svg-slant-m.svg" alt="graphic" width="360" height="741">
+    </picture>
+</section>
+                                
+<!-- ============================================ -->
+<!--                Side By Side                  -->
+<!-- ============================================ -->
+
+<section id="RPsbs-458">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Featured</span>
+            <h2 class="cs-title">The Transformational Mindset System</h2>
+            <p class="cs-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc lobortis mattis aliquam faucibus purus in. Diam ut venenatis tellus in metus vulputate eu. Massa vitae tortor condimentum lacinia quis vel eros donec ac.
+            </p>
+            <a href="" class="cs-button-solid">Learn More
+                <picture class="cs-button-wrapper">
+                    <img class="cs-button-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/angle-arrow.svg" alt="icon" loading="lazy" decoding="async" width="28" height="28">
+                </picture>
+            </a>
+        </div>
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="/assets/images/mindset.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/mindset.jpg">
+            <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/mindset.jpg" alt="grass" width="649" height="617">
+        </picture>
+    </div>
+</section>
+                                
+<!-- ============================================ -->
+<!--             Side By Side Reverse             -->
+<!-- ============================================ -->
+
+<section id="RPsbsr-458">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Featured</span>
+            <h2 class="cs-title">The Identity Development System</h2>
+            <p class="cs-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc lobortis mattis aliquam faucibus purus in. Diam ut venenatis tellus in metus vulputate eu. Massa vitae tortor condimentum lacinia quis vel eros donec ac.
+            </p>
+            <a href="" class="cs-button-solid">Learn More
+                <picture class="cs-button-wrapper">
+                    <img class="cs-button-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/angle-arrow.svg" alt="icon" loading="lazy" decoding="async" width="28" height="28">
+                </picture>
+            </a>
+        </div>
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="/assets/images/sel.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/sel.jpg">
+            <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/sel.jpg" alt="grass" width="649" height="617">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                 Side By Side                 -->
+<!-- ============================================ -->
+
+<section id="sbs-1372">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Grind: Grow From Within</span>
+            <h2 class="cs-title">Get The Book That Changed The World</h2>
+            <p class="cs-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="cs-content-flair">
+                <div class="cs-bar">
+                    <h3 class="cs-h3">
+                        Mindset Strategies
+                        <span class="cs-percentage">83%</span>
+                    </h3>
+                    <!--change the --progress number to match the percentage in cs-number-->
+                    <div class="cs-progress" aria-hidden="true">
+                        <span class="cs-progress-bar"  style="--progress: 83%"></span>
+                    </div>
+                </div>
+                <div class="cs-bar">
+                    <h3 class="cs-h3">
+                        Future Planning
+                        <span class="cs-percentage">72%</span>
+                    </h3>
+                    <!--change the --progress number to match the percentage in cs-number-->
+                    <div class="cs-progress" aria-hidden="true">
+                        <span class="cs-progress-bar"  style="--progress: 72%"></span>
+                    </div>
+                </div>
+                <div class="cs-bar">
+                    <h3 class="cs-h3">
+                        Daily Devotionals
+                        <span class="cs-percentage">96%</span>
+                    </h3>
+                    <!--change the --progress number to match the percentage in cs-number-->
+                    <div class="cs-progress" aria-hidden="true">
+                        <span class="cs-progress-bar"  style="--progress: 96%"></span>
+                    </div>
+                </div>
+            </div>
+            <a href="" class="cs-button-solid">Order Now
+                <picture class="cs-button-wrapper">
+                    <img class="cs-button-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/angle-arrow.svg" alt="icon" loading="lazy" decoding="async" width="28" height="28">
+                </picture>
+            </a>
+        </div>
+        <div class="cs-flex">
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="/assets/images/book-mockup.png">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="/assets/images/book-mockup.png">
+                <img loading="lazy" decoding="async" src="/assets/images/book-mockup.png" alt="person in cafe" width="414" height="627">
+            </picture>
+            <div class="cs-review">
+                <img class="cs-icon" loading="lazy" decoding="async" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/oeange-quotes.svg" alt="appliance" width="120" height="99">
+                <p class="cs-review-text">
+                    Rio Dixon is a generational influencer whose work has impacted thousands of lives around the world. His book is a must read for anyone looking to improve their mindset and achieve their goals.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+                                
+                                
+
+                                
+<script src="/assets/js/about.js" defer></script>
+    {% include 'sections/cta.html' %}
+
+{% endblock %}

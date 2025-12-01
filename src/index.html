@@ -1,0 +1,297 @@
+---
+title: "iDesign Site Demo"
+description: "Meta description for the page"
+permalink: "/"
+tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <!-- Critical styles are loaded first -->
+    <link rel="stylesheet" href="/assets/css/critical.css"/>
+
+    <!-- If we're in production, defer the rest of the home page styles. In development, always load it. Otherwise the site will break when hot-reload is used. -->
+    {% if client.isProduction %}
+        <link rel="preload" href="/assets/css/local.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript>
+            <link rel="stylesheet" href="/assets/css/local.css">
+        </noscript>
+
+    {% else %}
+        <link rel="stylesheet" href="/assets/css/local.css"/>
+    {% endif %}
+
+    <!-- To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  -->
+    <!-- Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data -->
+    <!-- {% include "components/home-schema.html" %} -->
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                   Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero-929">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">The Greatest Mental Health Coach in Atlanta</h2>
+            <div class="cs-flex">
+                <div class="cs-content-group">
+                    <p class="cs-text">
+                        Are you ready for greater success in your life? Have you found yourself asking what else you need to do to get that next level in life?
+                    </p>
+                    <a href="" class="cs-button-solid">Give Me A Call
+                        <picture class="cs-button-wrapper">
+                            <img class="cs-button-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/angle-arrow.svg" alt="icon" loading="lazy" decoding="async" width="28" height="28">
+                        </picture>
+                    </a>
+                </div>
+                <!-- <div class="cs-hours-group">
+                    <span class="cs-header">Business Hours</span>
+                    <div class="cs-hours">
+                        <span class="cs-day">Mon-Fri</span>
+                        <span class="cs-time">10AM-8PM</span>
+                    </div>
+                    <div class="cs-hours">
+                        <span class="cs-day">Sat</span>
+                        <span class="cs-time">11AM-6PM</span>
+                    </div>
+                    <div class="cs-hours">
+                        <span class="cs-day">Sun</span>
+                        <span class="cs-time">Closed</span>
+                    </div>
+                </div> -->
+            </div>
+            <!--We need this wrapper div so we can place the cs-tagline around the cs-picture image. We can only place images inside picture tags so the cs-tagline can't go in there. hence we HAVE to make a div wrapper so they can be placed together-->
+            <div class="cs-picture-group">
+                <span class="cs-tagline">Rio Dixon</span>
+                <!--Hair Model Picture-->
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="assets/images/black-guy-hero.png">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="assets/images/black-guy-hero.png">
+                    <img loading="lazy" decoding="async" src="assets/images/black-guy-hero.png" alt="Demario Dixon" width="576" height="598">
+                </picture>
+            </div>
+        </div>
+    </div>
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/salon-m.jpg">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/salon.jpg">
+        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/salon.jpg" alt="salon interior" width="1920" height="804">
+    </picture>
+</section>
+                                
+
+<!-- ============================================ -->
+<!--                 Side By Side                 -->
+<!-- ============================================ -->
+
+<section id="sbs-290">
+    <div class="cs-container">
+        <!-- Left Image Section -->
+        <div class="cs-image-group">
+            <picture class="cs-picture cs-picture1">
+                <source media="(max-width: 600px)" srcset="assets/images/mindset.jpg">
+                <source media="(min-width: 601px)" srcset="assets/images/mindset.jpg">
+                <img loading="lazy" decoding="async" src="assets/images/mindset.jpg" alt="people in a meeting" width="398" height="393" aria-hidden="true">
+            </picture>
+            <picture class="cs-picture cs-picture2">
+                <source media="(max-width: 600px)" srcset="assets/images/sel.jpg">
+                <source media="(min-width: 601px)" srcset="assets/images/sel.jpg">
+                <img loading="lazy" decoding="async" src="assets/images/sel.jpg" alt="people in a meeting" width="320" height="318" aria-hidden="true">
+            </picture>
+            <picture class="cs-picture cs-picture3">
+                <source media="(max-width: 600px)" srcset="assets/images/psychology.jpg">
+                <source media="(min-width: 601px)" srcset="assets/images/psychology.jpg">
+                <img loading="lazy" decoding="async" src="assets/images/psychology.jpg" alt="people in a meeting" width="325" height="322" aria-hidden="true">
+            </picture>
+            <picture class="cs-picture cs-picture4">
+                <source media="(max-width: 600px)" srcset="assets/images/consulting.jpg">
+                <source media="(min-width: 601px)" srcset="assets/images/consulting.jpg">
+                <img loading="lazy" decoding="async" src="assets/images/consulting.jpg" alt="people in a meeting" width="264" height="262" aria-hidden="true">
+            </picture>
+            <a href="" class="cs-play-link" aria-label="play link">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/play.svg" alt="play icon" width="32" height="32" aria-hidden="true">
+            </a>
+        </div>
+        <!-- Right Content Section-->
+        <div class="cs-content">
+            <span class="cs-topper">What I'm About</span>
+            <h2 class="cs-title">Mental Health Coaching With A Purpose</h2>
+            <p class="cs-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas adipiscing nulla suspendisse bibendum arcu diam, pellentesque lorem. Amet hac et sed rhoncus magna. Nisl neque ut varius volutpat morbi. 
+            </p>
+            <ul class="cs-ul">
+                <li class="cs-li">Praesent feugiat sem mattis.</li>
+                <li class="cs-li">Praesent feugiat sem mattis.</li>
+                <li class="cs-li">Praesent feugiat sem mattis.</li>
+            </ul>
+            <a class="cs-button-solid" aria-label="learn more about our programs" href="/about">Learn More
+                <picture class="cs-button-wrapper">
+                    <img class="cs-button-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/angle-arrow.svg" alt="icon" loading="lazy" decoding="async" width="28" height="28">
+                </picture>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Projects                    -->
+<!-- ============================================ -->
+
+<section id="projects-605">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex-group">
+                <span class="cs-topper">What I OFfer</span>
+                <h2 class="cs-title">Specializing In the Things that Make You Greater</h2>
+            </div>
+            <p class="cs-text">
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <a class="cs-link" href="">
+                    <div class="cs-info">
+                        <picture class="cs-background">
+                            <!--Mobile Image-->
+                            <source media="(max-width: 600px)" srcset="assets/images/psychology.jpg">
+                            <!--Tablet and above Image-->
+                            <source media="(min-width: 601px)" srcset="assets/images/psychology.jpg">
+                            <img loading="lazy" decoding="async" src="assets/images/psychology.jpg" alt="bathroom" width="413" height="450" aria-hidden="true">
+                        </picture>
+                        <span class="cs-header">Sports Psychology</span>
+                        <p class="cs-item-text">
+                            Lorem ipsum dolor sit ameet. Don nisi ligula eget dolor quam et. Aenean massa. Cum sociis Theme natoque penatibus et magnis dis parturient montes.
+                        </p>
+                        <span class="cs-number">01</span>
+                    </div>
+                    <h3 class="cs-h3">Sports Psychology</h3>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a class="cs-link" href="">
+                    <div class="cs-info">
+                        <picture class="cs-background">
+                            <!--Mobile Image-->
+                            <source media="(max-width: 600px)" srcset="assets/images/consulting.jpg">
+                            <!--Tablet and above Image-->
+                            <source media="(min-width: 601px)" srcset="assets/images/consulting.jpg">
+                            <img loading="lazy" decoding="async" src="assets/images/consulting.jpg" alt="bathroom" width="413" height="450" aria-hidden="true">
+                        </picture>
+                        <span class="cs-header">Education Consulting</span>
+                        <p class="cs-item-text">
+                            Lorem ipsum dolor sit ameet. Don nisi ligula eget dolor quam et. Aenean massa. Cum sociis Theme natoque penatibus et magnis dis parturient montes.
+                        </p>
+                        <span class="cs-number">02</span>
+                    </div>
+                    <h3 class="cs-h3">Education Consulting</h3>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a class="cs-link" href="">
+                    <div class="cs-info">
+                        <picture class="cs-background">
+                            <!--Mobile Image-->
+                            <source media="(max-width: 600px)" srcset="assets/images/sel.jpg">
+                            <!--Tablet and above Image-->
+                            <source media="(min-width: 601px)" srcset="assets/images/sel.jpg">
+                            <img loading="lazy" decoding="async" src="assets/images/sel.jpg" alt="bathroom" width="413" height="450" aria-hidden="true">
+                        </picture>
+                        <span class="cs-header">SEL Principles</span>
+                        <p class="cs-item-text">
+                            Lorem ipsum dolor sit ameet. Don nisi ligula eget dolor quam et. Aenean massa. Cum sociis Theme natoque penatibus et magnis dis parturient montes.
+                        </p>
+                        <span class="cs-number">03</span>
+                    </div>
+                    <h3 class="cs-h3">SEL Principles</h3>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a class="cs-link" href="">
+                    <div class="cs-info">
+                        <picture class="cs-background">
+                            <!--Mobile Image-->
+                            <source media="(max-width: 600px)" srcset="assets/images/mindset.jpg">
+                            <!--Tablet and above Image-->
+                            <source media="(min-width: 601px)" srcset="assets/images/mindset.jpg">
+                            <img loading="lazy" decoding="async" src="assets/images/mindset.jpg" alt="bathroom" width="413" height="450" aria-hidden="true">
+                        </picture>
+                        <span class="cs-header">Mindset Strategies</span>
+                        <p class="cs-item-text">
+                            Lorem ipsum dolor sit ameet. Don nisi ligula eget dolor quam et. Aenean massa. Cum sociis Theme natoque penatibus et magnis dis parturient montes.
+                        </p>
+                        <span class="cs-number">04</span>
+                    </div>
+                    <h3 class="cs-h3">Athletic Mindset Strategies</h3>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Reviews                    -->
+<!-- ============================================ -->
+
+<section id="reviews-438">
+    <div class="cs-container">
+        <div class="cs-content">
+            <p class="cs-review">
+                <!--Placed inside p tag for more consistent positioning-->
+                <img class="cs-quote" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Reviews/quote-left.svg" alt="quote icon" width="120" height="106" loading="lazy" decoding="async" aria-hidden="true">
+                “He speaks like no other. His mindset consultation truly changed my life as well as the lives of my students.”
+            </p>
+            <span class="cs-author">Jerome Miles - College Recruiter</span>
+        </div>
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="assets/images/black-guy-hero.jpg">
+            <source media="(min-width: 601px)" srcset="assets/images/black-guy-hero.jpg">
+            <img loading="lazy" decoding="async" src="assets/images/black-guy-hero.jpg" alt="person looking left" width="328" height="540" aria-hidden="true">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Stats                      -->
+<!-- ============================================ -->        
+
+<div id="stats-2402">
+    <div class="cs-container">
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <span class="cs-number">100<span class="cs-small">%</span></span>
+                <span class="cs-header">Original Methods</span>
+                <span class="cs-item-text">You won't learn these lessons anywhere else.</span>
+            </li>
+            <li class="cs-item">
+                <span class="cs-number">50<span class="cs-small">+</span></span>
+                <span class="cs-header">Presentations Given</span>
+                <span class="cs-item-text">At campuses and events across the country.</span>
+            </li>
+            <li class="cs-item">
+                <span class="cs-number">10<span class="cs-small">+</span></span>
+                <span class="cs-header">Years of Experience</span>
+                <span class="cs-item-text">More than a decade of changing lives.</span>
+            </li>
+            <li class="cs-item">
+                <span class="cs-number">5K<span class="cs-small">+</span></span>
+                <span class="cs-header">Lives Touched</span>
+                <span class="cs-item-text">Countless transformed clients.</span>
+            </li>
+        </ul>
+    </div>
+</div>
+                                
+                                                        
+                                
+
+    {% include 'sections/cta.html' %}
+{% endblock %}
